@@ -1,9 +1,6 @@
-package com.kinsta.stripejava.backend;
+package com.stripe.example.demo.payment;
 
 import com.stripe.Stripe;
-import com.stripe.example.demo.payment.CustomerUtil;
-import com.stripe.example.demo.payment.ProductDAO;
-import com.stripe.example.demo.payment.RequestDTO;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Customer;
 import com.stripe.model.Product;
