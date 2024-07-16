@@ -2,7 +2,7 @@ import {ItemData} from "./CartItem.tsx";
 import {Button, Input, VStack} from "@chakra-ui/react";
 import {useState} from "react";
 
-function CustomerDetails(props: CustomerDetailsProp) {
+function CustomerDetails(props: Readonly<CustomerDetailsProp>) {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const onCustomerNameChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,7 +16,7 @@ function CustomerDetails(props: CustomerDetailsProp) {
     }
 
     const initiatePayment = () => {
-        fetch(process.env.VITE_SERVER_BASE_URL + props.endpoint, {
+        fetch(import.meta.env.VITE_SERVER_BASE_URL + props.endpoint, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -32,18 +32,19 @@ function CustomerDetails(props: CustomerDetailsProp) {
 
     }
 
-    return <>
+    return (
         <VStack spacing={3} width={'xl'}>
             <Input variant='filled' placeholder='Customer Name' onChange={onCustomerNameChange} value={name}/>
             <Input variant='filled' placeholder='Customer Email' onChange={onCustomerEmailChange} value={email}/>
             <Button onClick={initiatePayment} colorScheme={'green'}>Checkout</Button>
         </VStack>
-    </>
+    )
 }
 
 interface CustomerDetailsProp {
     data: ItemData[]
-    endpoint: string
+    endpoint: string,
+    mode: string,
 }
 
 export default CustomerDetails

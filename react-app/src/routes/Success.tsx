@@ -7,13 +7,17 @@ function Success() {
     const onButtonClick = () => {
         navigate("/")
     }
-    return <Center h={'100vh'} color='green'>
-        <VStack spacing={3}>
-            <Heading fontSize={'4xl'}>Success!</Heading>
-            <Text color={'black'}>{queryParams.toString().split("&").join("\n")}</Text>
-            <Button onClick={onButtonClick} colorScheme={'green'}>Go Home</Button>
-        </VStack>
-    </Center>
+    return (
+      <div style={{ width: '100vw', height: '100vh'}}>
+        <Center h={'100vh'} color='green'>
+            <VStack spacing={3}>
+                <Heading fontSize={'4xl'}>Success!</Heading>
+                <Text color={'black'}>{queryParams.toString().split("&").join("\n")}</Text>
+                <Button onClick={onButtonClick} colorScheme={'green'}>Go Home</Button>
+            </VStack>
+        </Center>
+      </div>
+    )
 }
 
 export default Success
