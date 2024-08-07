@@ -1,4 +1,4 @@
-package com.stripe.example.demo.payment;
+package com.stripe.example.demo.tutorial;
 
 import com.stripe.model.Product;
 import lombok.Getter;

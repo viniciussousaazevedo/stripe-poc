@@ -1,4 +1,4 @@
-package com.stripe.example.demo.payment;
+package com.stripe.example.demo.tutorial;
 
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-public class PaymentController {
+public class TutorialPaymentController {
 
     String STRIPE_API_KEY = System.getenv().get("STRIPE_API_KEY");
 

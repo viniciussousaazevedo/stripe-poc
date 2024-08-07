@@ -1,4 +1,4 @@
-package com.stripe.example.demo.payment;
+package com.stripe.example.demo.tutorial;
 
 import com.stripe.exception.StripeException;
 import com.stripe.model.Customer;
